@@ -64,7 +64,7 @@ main()
     
     {
         fusion::vector<int, float> v1(4, 3.3f);
-        std::pair<short, float> v2(5, 3.3f);
+        std::pair<short, float> v2(static_cast<short>(5), 3.3f);
         fusion::vector<long, double> v3(5, 4.4);
         BOOST_TEST(v1 < v2);
         BOOST_TEST(v1 <= v2);
