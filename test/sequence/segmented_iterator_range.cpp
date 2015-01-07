@@ -32,6 +32,7 @@ struct ostream_fun
         sout_ << t << ' ';
     }
 private:
+    ostream_fun& operator=(const ostream_fun&);
     std::ostream & sout_;
 };
 
