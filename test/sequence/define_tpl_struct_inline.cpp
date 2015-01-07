@@ -17,6 +17,10 @@
 #include <iostream>
 #include <string>
 
+#if defined (BOOST_MSVC) || defined (_MSC_VER)
+#  pragma warning(disable: 4512) // assignment operator could not be generated
+#endif
+
 struct cls
 {
     BOOST_FUSION_DEFINE_TPL_STRUCT_INLINE(

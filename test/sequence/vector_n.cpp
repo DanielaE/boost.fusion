@@ -5,6 +5,9 @@
     file LICENSE_1_0.txt or copy at http://www.boost.org/LICENSE_1_0.txt)
 ==============================================================================*/
 #include <boost/detail/lightweight_test.hpp>
+#if defined (BOOST_MSVC) || defined (_MSC_VER)
+#  pragma warning(disable: 4244) // narrowing conversion
+#endif
 #include <boost/fusion/container/vector/vector10.hpp>
 #include <boost/fusion/adapted/mpl.hpp>
 #include <boost/fusion/sequence/intrinsic/size.hpp>
