@@ -27,6 +27,10 @@
 #include <boost/mpl/assert.hpp>
 #include <iostream>
 
+#if defined(BOOST_MSVC) || defined(_MSC_VER)
+#pragma warning(disable: 4003) // not enough actual parameters for macro
+#endif
+
 class empty_struct{};
 BOOST_FUSION_ADAPT_STRUCT(empty_struct,)
 
