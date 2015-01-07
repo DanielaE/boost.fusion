@@ -7,6 +7,10 @@
 #ifndef BOOST_FUSION_FLATTEN_VIEW_HPP_INCLUDED
 #define BOOST_FUSION_FLATTEN_VIEW_HPP_INCLUDED
 
+#if defined (BOOST_MSVC) || defined (_MSC_VER)
+#  pragma warning(push)
+#  pragma warning(disable: 4512) // assignment operator could not be generated
+#endif
 
 #include <boost/fusion/support/config.hpp>
 #include <boost/mpl/bool.hpp>
@@ -129,5 +133,8 @@ namespace boost { namespace fusion { namespace extension
     };
 }}}
 
+#if defined (BOOST_MSVC) || defined (_MSC_VER)
+#  pragma warning(pop)
+#endif
 
 #endif
