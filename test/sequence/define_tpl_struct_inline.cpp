@@ -5,6 +5,10 @@
     file LICENSE_1_0.txt or copy at http://www.boost.org/LICENSE_1_0.txt)
 ==============================================================================*/
 
+#if defined(BOOST_MSVC) || defined(_MSC_VER)
+#  pragma warning(disable: 4003) // not enough actual parameters for macro
+#endif
+
 #include <boost/detail/lightweight_test.hpp>
 #include <boost/fusion/sequence.hpp>
 #include <boost/fusion/container.hpp>
