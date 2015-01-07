@@ -7,9 +7,18 @@
 #if !defined(FUSION_SEQUENCE_CLASS_VECTOR_10022005_0602)
 #define FUSION_SEQUENCE_CLASS_VECTOR_10022005_0602
 
+#if defined (BOOST_MSVC) || defined (_MSC_VER)
+#  pragma warning(push)
+#  pragma warning(disable: 4244) // narrowing conversion
+#endif
+
 #include <boost/fusion/support/config.hpp>
 #include <boost/fusion/container/vector/vector_fwd.hpp>
 #include <boost/fusion/container/vector/vector.hpp>
 #include <boost/fusion/container/vector/convert.hpp>
+
+#if defined (BOOST_MSVC) || defined (_MSC_VER)
+#  pragma warning(pop)
+#endif
 
 #endif

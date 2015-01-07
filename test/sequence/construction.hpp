@@ -56,6 +56,7 @@ test()
     nil empty;
 
     FUSION_SEQUENCE<> empty0;
+    (void)empty0;
 
 #ifndef NO_CONSTRUCT_FROM_NIL
     FUSION_SEQUENCE<> empty1(empty);
