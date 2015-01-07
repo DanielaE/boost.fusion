@@ -21,6 +21,7 @@
 #if defined (BOOST_MSVC)
 #  pragma warning(push)
 #  pragma warning (disable: 4512) // assignment operator could not be generated.
+#  pragma warning (disable: 4244) // narrowing conversion
 #endif
 
 namespace boost { namespace fusion

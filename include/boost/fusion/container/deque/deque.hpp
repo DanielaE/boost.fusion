@@ -8,6 +8,11 @@
 #if !defined(BOOST_FUSION_DEQUE_26112006_1649)
 #define BOOST_FUSION_DEQUE_26112006_1649
 
+#if defined (BOOST_MSVC) || defined (_MSC_VER)
+#  pragma warning(push)
+#  pragma warning(disable: 4244) // narrowing conversion
+#endif
+
 # include <boost/fusion/container/deque/deque_fwd.hpp>
 
 ///////////////////////////////////////////////////////////////////////////////
@@ -186,4 +191,9 @@ namespace boost { namespace fusion
 }}
 
 #endif
+
+#if defined (BOOST_MSVC) || defined (_MSC_VER)
+#  pragma warning(pop)
+#endif
+
 #endif
