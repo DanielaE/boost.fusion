@@ -103,6 +103,8 @@ namespace boost { namespace fusion
                 return type();
             }
         };
+    private:
+        std_tuple_iterator& operator=(const std_tuple_iterator&);
     };
 }}
 

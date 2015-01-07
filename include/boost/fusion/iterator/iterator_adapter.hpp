@@ -125,6 +125,8 @@ namespace boost { namespace fusion
                 return type(fusion::prior(i.iterator_base));
             }
         };
+
+        iterator_adapter& operator=(const iterator_adapter&);
     };
 }}
 

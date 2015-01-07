@@ -37,7 +37,7 @@ namespace boost { namespace fusion { namespace detail
         static U
         call(U& x, F& f, T const& new_value)
         {
-            return f(x) ? new_value : x;
+            return f(x) ? static_cast<U>(new_value) : x;
         }
     };
 

@@ -38,6 +38,8 @@ namespace boost { namespace fusion { namespace detail
                 return void_();
             }
         };
+    private:
+        segmented_for_each_fun& operator=(const segmented_for_each_fun &);
     };
 
     template <typename Sequence, typename F>

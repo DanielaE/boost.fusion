@@ -35,6 +35,8 @@ namespace boost { namespace fusion { namespace detail
                 return fusion::fold(seq, state, fun.fun);
             }
         };
+    private:
+        segmented_fold_fun& operator=(const segmented_fold_fun&);
     };
 
     // The default implementation of this lives in detail/fold.hpp

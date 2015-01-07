@@ -7,6 +7,11 @@
 #if !defined(FUSION_VECTOR_07072005_1244)
 #define FUSION_VECTOR_07072005_1244
 
+#if defined (BOOST_MSVC) || defined (_MSC_VER)
+#  pragma warning(push)
+#  pragma warning(disable: 4244) // narrowing conversion
+#endif
+
 #include <boost/preprocessor/iterate.hpp>
 #include <boost/preprocessor/repetition/enum_params.hpp>
 #include <boost/preprocessor/repetition/enum_binary_params.hpp>
@@ -240,4 +245,9 @@ FUSION_HASH endif
 #endif // BOOST_FUSION_DONT_USE_PREPROCESSED_FILES
 
 #undef FUSION_HASH
+
+#if defined (BOOST_MSVC) || defined (_MSC_VER)
+#  pragma warning(pop)
+#endif
+
 #endif
