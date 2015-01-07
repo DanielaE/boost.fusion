@@ -10,6 +10,11 @@
 #if !defined(BOOST_FUSION_FUNCTIONAL_INVOCATION_INVOKE_HPP_INCLUDED)
 #if !defined(BOOST_PP_IS_ITERATING)
 
+#if defined(BOOST_MSVC) || defined(_MSC_VER)
+#  pragma warning(push)
+#  pragma warning(disable: 4172) // returning address of local variable or temporary
+#endif
+
 #include <boost/preprocessor/cat.hpp>
 #include <boost/preprocessor/iteration/iterate.hpp>
 #include <boost/preprocessor/arithmetic/dec.hpp>
@@ -181,6 +186,10 @@ namespace boost { namespace fusion
     }
 
 }}
+
+#if defined(BOOST_MSVC) || defined(_MSC_VER)
+#  pragma warning(pop)
+#endif
 
 #define BOOST_FUSION_FUNCTIONAL_INVOCATION_INVOKE_HPP_INCLUDED
 #else // defined(BOOST_PP_IS_ITERATING)

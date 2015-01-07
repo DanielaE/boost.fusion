@@ -8,6 +8,13 @@
 #define FUSION_VECTOR_11052014_1625
 
 #include <boost/config.hpp>
+
+#if defined(BOOST_MSVC) || defined(_MSC_VER)
+#  pragma warning(push)
+#  pragma warning(disable: 4100) // unreferenced formal parameter
+#  pragma warning(disable: 4244) // narrowing conversion
+#endif
+
 #include <boost/fusion/support/config.hpp>
 #include <boost/fusion/container/vector/detail/config.hpp>
 #include <boost/fusion/container/vector/vector_fwd.hpp>
@@ -318,5 +325,10 @@ namespace boost { namespace fusion
 }}
 
 #endif
+
+#if defined(BOOST_MSVC) || defined(_MSC_VER)
+#  pragma warning(pop)
+#endif
+
 #endif
 

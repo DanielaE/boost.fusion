@@ -13,9 +13,9 @@
 #include <boost/fusion/iterator/deref.hpp>
 #include <boost/fusion/iterator/next.hpp>
 
-#if !defined(BOOST_NO_CXX11_RVALUE_REFERENCES) && BOOST_WORKAROUND(BOOST_GCC, / 100 == 404)
-#include <boost/core/enable_if.hpp>
-#include <boost/type_traits/is_same.hpp>
+#if defined (BOOST_MSVC) || defined (_MSC_VER)
+#  pragma warning(push)
+#  pragma warning(disable: 4239) // nonstandard extension used : A non-const reference may only be bound to an lvalue
 #endif
 
 namespace boost { namespace fusion
@@ -177,5 +177,9 @@ namespace boost { namespace fusion { namespace detail
         typedef Value type;
     };
 }}}
+
+#if defined (BOOST_MSVC) || defined (_MSC_VER)
+#  pragma warning(pop)
+#endif
 
 #endif
