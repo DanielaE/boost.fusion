@@ -13,6 +13,11 @@
 #include <boost/fusion/iterator/deref.hpp>
 #include <boost/fusion/iterator/next.hpp>
 
+#if defined (BOOST_MSVC) || defined (_MSC_VER)
+#  pragma warning(push)
+#  pragma warning(disable: 4239) // nonstandard extension used : A non-const reference may only be bound to an lvalue
+#endif
+
 namespace boost { namespace fusion
 {
     struct fusion_sequence_tag;
@@ -166,5 +171,9 @@ namespace boost { namespace fusion { namespace detail
         typedef Value type;
     };
 }}}
+
+#if defined (BOOST_MSVC) || defined (_MSC_VER)
+#  pragma warning(pop)
+#endif
 
 #endif
