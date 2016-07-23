@@ -16,6 +16,11 @@
 #include <tuple>
 #include <cstddef>
 
+#if defined (BOOST_MSVC)
+#  pragma warning(push)
+#  pragma warning(disable: 4100) // unreferenced formal parameter
+#endif
+
 namespace boost { namespace fusion { namespace detail
 {
     template <typename First, typename Last,
@@ -84,5 +89,9 @@ namespace boost { namespace fusion { namespace detail
         }
     };
 }}}
+
+#if defined (BOOST_MSVC)
+#  pragma warning(pop)
+#endif
 
 #endif
