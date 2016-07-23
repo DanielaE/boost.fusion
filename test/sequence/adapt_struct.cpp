@@ -4,6 +4,11 @@
     Distributed under the Boost Software License, Version 1.0. (See accompanying
     file LICENSE_1_0.txt or copy at http://www.boost.org/LICENSE_1_0.txt)
 ==============================================================================*/
+
+#if defined(BOOST_MSVC) || defined(_MSC_VER)
+#  pragma warning(disable: 4003) // not enough actual parameters for macro
+#endif
+
 #include <boost/detail/lightweight_test.hpp>
 #include <boost/fusion/adapted/struct/adapt_struct.hpp>
 #include <boost/fusion/sequence/intrinsic/at.hpp>
