@@ -16,6 +16,10 @@
 #include <boost/static_assert.hpp>
 #include <iostream>
 
+#if defined(BOOST_MSVC) || defined(_MSC_VER)
+#pragma warning(disable: 4003) // not enough actual parameters for macro
+#endif
+
 BOOST_FUSION_DEFINE_STRUCT_INLINE(empty_struct, )
 
 int
