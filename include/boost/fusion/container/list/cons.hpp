@@ -9,6 +9,12 @@
 #define FUSION_CONS_07172005_0843
 
 #include <boost/fusion/support/config.hpp>
+
+#if defined(BOOST_MSVC) || defined(_MSC_VER)
+#  pragma warning(push)
+#  pragma warning(disable: 4244) // narrowing conversion
+#endif
+
 #include <boost/fusion/support/void.hpp>
 #include <boost/fusion/support/detail/enabler.hpp>
 #include <boost/fusion/container/list/cons_fwd.hpp>
@@ -139,6 +145,10 @@ namespace boost { namespace fusion
         cdr_type cdr;
     };
 }}
+
+#if defined(BOOST_MSVC) || defined(_MSC_VER)
+#  pragma warning(pop)
+#endif
 
 #endif
 
