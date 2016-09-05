@@ -29,8 +29,8 @@ main()
     {
         typedef boost::mpl::vector_c<int, 1, 2, 3> mpl_vec;
         // Cannot use lambda here as mpl iterators return rvalues and lambda needs lvalues
-        BOOST_TEST(boost::fusion::count_if(mpl_vec(), std::bind2nd(std::less_equal<int>(), 2)) == 2);
-        BOOST_TEST(boost::fusion::count_if(mpl_vec(), std::bind2nd(std::greater<int>(), 2)) == 1);
+        BOOST_TEST(boost::fusion::count_if(mpl_vec(), std::bind(std::less_equal<int>(), std::placeholders::_1, 2)) == 2);
+        BOOST_TEST(boost::fusion::count_if(mpl_vec(), std::bind(std::greater<int>(), std::placeholders::_1, 2)) == 1);
     }
 
     return boost::report_errors();
