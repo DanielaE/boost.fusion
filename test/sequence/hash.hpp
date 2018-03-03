@@ -18,17 +18,17 @@ hash_test()
 
     const FUSION_SEQUENCE<int, char, bool, std::string> v0(42, 'x', false, "Aurea prima");
     const FUSION_SEQUENCE<int, char, bool, std::string> v1(42, 'x', false, "Aurea prima");
-    BOOST_TEST(hash_value(v0) == hash_value(v1));
+    BOOST_TEST(hashing::hash_value(v0) == hashing::hash_value(v1));
     
     const FUSION_SEQUENCE<int, char, bool, std::string> w(41, 'x', false, "Aurea prima");
-    BOOST_TEST(hash_value(w) != hash_value(v0));
+    BOOST_TEST(hashing::hash_value(w) != hashing::hash_value(v0));
     
     const FUSION_SEQUENCE<int, char, bool, std::string> x(42, 'y', false, "Aurea prima");
-    BOOST_TEST(hash_value(x) != hash_value(v0));
+    BOOST_TEST(hashing::hash_value(x) != hashing::hash_value(v0));
     
     const FUSION_SEQUENCE<int, char, bool, std::string> y(42, 'x', true, "Aurea prima");
-    BOOST_TEST(hash_value(y) != hash_value(v0));
+    BOOST_TEST(hashing::hash_value(y) != hashing::hash_value(v0));
     
     const FUSION_SEQUENCE<int, char, bool, std::string> z(42, 'x', false, "quae vindice nullo");
-    BOOST_TEST(hash_value(z) != hash_value(v0));
+    BOOST_TEST(hashing::hash_value(z) != hashing::hash_value(v0));
 }
